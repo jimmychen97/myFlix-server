@@ -54,7 +54,7 @@ app.get('/', (req, res) => {
 });
 
 // GET route located at endpoint '/movies'
-app.get('/movies', (req, res) => {
+app.get('/moviess', (req, res) => {
   res.json(topMovies);
 });
 
