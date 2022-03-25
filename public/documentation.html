@@ -26,29 +26,29 @@
                 <th scope="row">Return a list of all movies to the user</th>
                 <td>/movies</td>
                 <td>GET</td>
-                <td>None</td>
+                <td>-</td>
                 <td>A JSON object holding data about all the movies</td>
             </tr>
             <tr>
                 <th scope="row">Return data (description, genre, director, image URL, feature or not) about a single movie by title
                 </th>
-                <td>/movies/:title</td>
+                <td>/movies/:Title</td>
                 <td>GET</td>
-                <td>None</td>
+                <td>-</td>
                 <td>A JSON object holding data about a movie</td>
             </tr>
             <tr>
                 <th scope="row">Return data about a genre (description) by name</th>
-                <td>/movies/genre/:genreName</td>
+                <td>/movies/genre/:Name</td>
                 <td>GET</td>
-                <td>None</td>
+                <td>-</td>
                 <td>A JSON object holding data about a genre</td>
             </tr>
             <tr>
                 <th scope="row">Return data about a director (bio, birth year, death year) by name</th>
-                <td>/movies/directors/:directorName</td>
+                <td>/movies/director/:Name</td>
                 <td>GET</td>
-                <td>None</td>
+                <td>-</td>
                 <td>A JSON object holding data about a director</td>
             </tr>
             <tr>
@@ -58,42 +58,48 @@
                 <td>
                     <code>
                         {
-                            "name": "Firstname Lastname"
+                            "Username": "Username",
+                            "Password": "Password",
+                            "Email": "user@email.com",
+                            "Birthday": "09/09/1990"
                         }
                     </code>
                 </td>
                 <td>A JSON object holding data about the newly added user</td>
             </tr>
             <tr>
-                <th scope="row">Allow users to update their user name</th>
-                <td>/users/:id</td>
+                <th scope="row">Allow users to update their info base on username</th>
+                <td>/users/:Username</td>
                 <td>PUT</td>
                 <td><code>
-                    {
-                        "name": "New Name"
+                    {       
+                        "Username": "Username",
+                        "Password": "NewPassword",
+                        "Email": "user@email.com",
+                        "Birthday": "09/09/1991"
                     }
                 </code></td>
                 <td>A JSON object holding data about the modified user</td>
             </tr>
             <tr>
                 <th scope="row">Allow users to add a movie to their list of favorites</th>
-                <td>/users/:id/:movieTitle</td>
+                <td>/users/:Username/movies/:MovieID</td>
                 <td>POST</td>
-                <td>None</td>
-                <td>A text message indicating the movie was added</td>
+                <td>-</td>
+                <td>A text message indicating the movie was added to the user's favorite list</td>
             </tr>
             <tr>
                 <th scope="row">Allow users to remove a movie from their list of favorites</th>
-                <td>/users/:id/:movieTitle</td>
+                <td>/users/:Username/movies/:MovieID</td>
                 <td>DELETE</td>
-                <td>None</td>
-                <td>A text message indicating the movie was removed</td>
+                <td>-</td>
+                <td>A text message indicating the movie was removed from the user's favorite list</td>
             </tr>
             <tr>
                 <th scope="row">Allow exisitng users to deregister</th>
-                <td>/users/:id</td>
+                <td>/users/:Username</td>
                 <td>DELETE</td>
-                <td>None</td>
+                <td>-</td>
                 <td>A text message indicating the user has been deleted</td>
             </tr>
         </tbody>
