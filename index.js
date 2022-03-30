@@ -14,9 +14,13 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan('common'));
 app.use(express.static('public'));
-mongoose.connect('mongodb://localhost:27017/myFlixDB', {
-  useUnifiedTopology: true,
-});
+
+// local mongoDB connection
+// mongoose.connect('mongodb://localhost:27017/myFlixDB', { useUnifiedTopology: true });
+
+// online mongoDB connection
+mongoose.connect( process.env.CONNECTION_URI, { useUnifiedTopology: true });
+
 app.use(cors()); 
 let auth = require('./auth.js')(app);
 const passport = require('passport');
