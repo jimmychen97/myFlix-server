@@ -1,4 +1,4 @@
-<h1 align="center">Movie API</h1>
+<h1 align="center">myFlix Server</h1>
 
 # Project Description
  Build the server-side components of a movie web application. The application will provide users with access to information about different movies, directors, and genres.
