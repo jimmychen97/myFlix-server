@@ -73,7 +73,7 @@ app.get('/', passport.authenticate('jwt', {session: false}), (req, res) => {
 });
 
 // READ: return a list of all movies to the user
-// passport.authenticate('jwt', {session: false})
+passport.authenticate('jwt', {session: false})
 app.get('/movies', (req, res) => {
   Movies.find()
     .then((movies) => {
